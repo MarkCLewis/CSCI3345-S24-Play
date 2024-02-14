@@ -1,38 +1,70 @@
-.metals
-.bloop
-.bsp
-.vscode
-project/metals.sbt
+# Created by https://www.toptal.com/developers/gitignore/api/playframework,scala,visualstudiocode,metals,sbt,bloop
+# Edit at https://www.toptal.com/developers/gitignore?templates=playframework,scala,visualstudiocode,metals,sbt,bloop
 
-logs
-project/project
-project/target
-target
-tmp
-.history
-dist
-.idea
-*.iml
-/out
-.idea_modules
-.classpath
-.project
-/RUNNING_PID
-.settings
-.DS_Store
+### Bloop ###
+.bloop/
 
-# hidden cross project folders
-shared/.js
-shared/.jvm
+### Metals ###
+.metals/
+project/**/metals.sbt
 
-# temp files
-.~*
-*~
-*.orig
-
-# eclipse
-.scala_dependencies
-.buildpath
-.cache
-.target
+### PlayFramework ###
+# Ignore Play! working directory #
 bin/
+/db
+.eclipse
+/lib/
+/logs/
+/modules
+/project/project
+/project/target
+/target
+tmp/
+test-result
+server.pid
+*.eml
+/dist/
+.cache
+
+### SBT ###
+# Simple Build Tool
+# http://www.scala-sbt.org/release/docs/Getting-Started/Directories.html#configuring-version-control
+
+dist/*
+target/
+lib_managed/
+src_managed/
+project/boot/
+project/plugins/project/
+.history
+.lib/
+
+### SBT Patch ###
+.bsp/
+
+### Scala ###
+*.class
+*.log
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+
+### VisualStudioCode ###
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/*.code-snippets
+
+# Local History for Visual Studio Code
+.history/
+
+# Built Visual Studio Code Extensions
+*.vsix
+
+### VisualStudioCode Patch ###
+# Ignore all local history of files
+.ionide
+
+# End of https://www.toptal.com/developers/gitignore/api/playframework,scala,visualstudiocode,metals,sbt,bloop
