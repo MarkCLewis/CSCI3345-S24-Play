@@ -5,7 +5,14 @@
   <table>
     <tr>
     @for(h <- header) {
-      <td>@h</td>  
+      <td><a href="/nba?col=@h">@h</a></td>  
+    }
+    @for(row <- data) {
+      <tr>
+        @for(cell <- row) {
+          <td>@cell</td>
+        }
+      </tr>
     }
     </tr>
   </table>
