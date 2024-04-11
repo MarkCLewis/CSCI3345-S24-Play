@@ -1,5 +1,7 @@
 package models
 
+import scala.concurrent.Future
+
 object NBATeams {
   val table = """team                 won lost min  fgm  fga   3m   3a  ftm  fta   or   tr   as   st   to   bk   pf   pts  tc  ej  ff
 AtlantaHawks         24   30 12811 2361 5055  747 2059 1105 1362  701 2424 1419  412  685  241 1017  6574   0   0   0
@@ -38,4 +40,13 @@ WashingtonWizards     9   44 12434 2294 4838  635 1826  849 1107  483 2158 1483 
     (lines.head, lines.tail)
   }
 
+  case class NBATeam(name: String, wins: Int)
+
+  def getTeams(): Future[Seq[NBATeam]] = {
+    Future.successful(Seq(NBATeam(tableData(0)(0), tableData(0)(1).toInt)))
+  }
+
+  // map: T -> Future[T]
+  // flatMap: Future[T] -> Future[T]
+  // foreach: T -> Unit
 }

@@ -11,7 +11,12 @@ object ScalaJSExample {
 
   def main(args: Array[String]): Unit = {
     // This line demonstrates using Scala.js to modify the DOM.
-    dom.document.getElementById("scalajsShoutOut").textContent = SharedMessages.itWorks
+    val shoutOut = dom.document.getElementById("scalajsShoutOut")
+    if (shoutOut != null) {
+      shoutOut.textContent = SharedMessages.itWorks
+    }
+
+    AnotherScalaJSFile.printHi()
 
     // What is below is using Scala.js with Slinky to use React.
     println("Call the react stuff.")
